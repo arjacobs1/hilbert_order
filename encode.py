@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # encode.py
-# Implementation of encoding and decoding algorithms as described in the paper
+# Implementation of encoding and decoding algorithms as described in
 # "A new algorithm for encoding and decoding the Hilbert order" by Ningtao
 # Chen, Nengchao Wang, and Baochang Shi
 #
