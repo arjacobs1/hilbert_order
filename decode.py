@@ -23,33 +23,20 @@ r = z[-1:]
 z = z[:-1]
 w = 2
 
-if r == "0":
-    x = 0; y = 0
-elif r == "1":
-    x = 0; y = 1
-elif r == "2":
-    x = 1; y = 1
-else:
-    x = 1; y = 0
-
+xdict = {"0": 0, "1": 0, "2": 1, "3": 1}
+ydict = {"0": 0, "1": 1, "2": 1, "3": 0}
+x = xdict[z[r-1]]
+y = ydict[z[r-1]]
 
 # ----- ITERATION -----
 while len(z) > 0:
     r = z[-1:]
     z = z[:-1]
-    if r == "0":
-        tmp = x
-        x = y
-        y = tmp
-    elif r == "1":
-        y = y + w
-    elif r == "2":
-        x = x + w
-        y = y + w
-    else:
-        tmp = x
-        x = (w*2)-y-1
-        y = w-tmp-1
+    tempxdict = {"0": y, "1": x, "2": x+w, "3": 2*w-y-1}
+    newydict = {"0": x, "1": y+w, "2": y+w, "3": w-x-1}
+    tempx = tempxdict[z[r-1]]
+    y = newydict[z[r-1]]
+    x = tempx
     w = w*2
 
 
